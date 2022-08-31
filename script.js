@@ -6,7 +6,7 @@
 // document.querySelector('.guess').value = 10;
 // console.log(document.querySelector('.guess').value);
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
-let score = 20;
+let score = 10;
 //display message function
     function displayMessage(message)
     {
