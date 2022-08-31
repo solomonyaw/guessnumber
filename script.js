@@ -77,8 +77,8 @@ document.querySelector('.check').addEventListener('click', function () {
 document.querySelector('.again').addEventListener('click', function () {
  displayMessage('Start guessing');
   document.querySelector('body').style.backgroundColor = '#222';
-  score = 20;
-  document.querySelector('.score').textContent = 20;
+  score = 10;
+  document.querySelector('.score').textContent = 10;
   document.querySelector('.output').textContent = 'Guess My Number!';
   document.querySelector('.number').textContent = '?';
   document.querySelector('.guess').value = '';
