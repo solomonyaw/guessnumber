@@ -7,6 +7,7 @@
 // console.log(document.querySelector('.guess').value);
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
 let score = 10;
+let highscore = 0;
 //display message function
     function displayMessage(message)
     {
@@ -24,20 +25,25 @@ document.querySelector('.check').addEventListener('click', function () {
    
   //When player wins
   else if (guess === secretNumber) {
-      displayMessage('Correct Number! 🥳');
+    displayMessage('Correct Number! 🥳');
     document.querySelector('.output').textContent = 'You won! 🥳';
     document.querySelector('.number').textContent = secretNumber;
     document.querySelector('body').style.backgroundColor = '#60b347';
       document.querySelector('.number').style.width = '30rem';
-      
-      // When guess is wrong
-  } else if (guess !== secretNumber) {
+      if (score > highscore)
+      {
+          highscore = score;
+          document.querySelector('.highscore').textContent = highscore;
+     }
+  }
+  // When guess is wrong
+  else if (guess !== secretNumber) {
     if (score > 1) {
-        displayMessage(guess > secretNumber ? 'Too high! 📈' : 'Too Low! 📉');
+      displayMessage(guess > secretNumber ? 'Too high! 📈' : 'Too Low! 📉');
       score--;
       document.querySelector('.score').textContent = score;
     } else {
-        displayMessage('You lost the game!');
+      displayMessage('You lost the game!');
       document.querySelector('.score').textContent = 0;
     }
   }
